@@ -67,5 +67,5 @@ I’m actively exploring opportunities in:
 - Data Analytics (DA)
 - Business Intelligence / Product Analytics (BA)
 
-📫 **Email**: your.email@example.com  
+📫 **Email**: zy.liu26@gmail.com  
 🔗 **LinkedIn**: [linkedin.com/in/zhuoyanliu](https://www.linkedin.com/in/zhuoyan-liu-70a5151bb/)  
