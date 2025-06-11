@@ -1,0 +1,15 @@
+INVALID - L INVALID - L
+
+INVALID - S INVALID - S
+
+INVALID - L INVALID - L
+
+INVALID - E INVALID - E
+
+UPC/EAN EXT NORMAL INTERPRETATION
+
+This label will print.....
+14 barcodes tests the interpretation line for this barcode.
+
+TEST INBARCODE
+

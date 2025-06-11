@@ -1,0 +1,3 @@
+This format tests:
+
+Plessey(BP), no check digits, INTL_HOLL (C13) with valid characters

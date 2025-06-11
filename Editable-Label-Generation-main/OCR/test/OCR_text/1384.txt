@@ -1,0 +1,6 @@
+This format teste:
+
+NST Code 128 (BC) mode: N no check digit, C127 with val id characters,
+
+81234567891 2ABC+-
+

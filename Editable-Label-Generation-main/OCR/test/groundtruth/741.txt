@@ -1,0 +1,3 @@
+This format tests:
+
+UPC-A(BU), no check digit, CI2S with valid characters

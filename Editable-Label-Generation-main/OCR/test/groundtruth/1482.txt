@@ -1,0 +1,3 @@
+This format tests:
+
+ANST Codeber(BK), INTL_MISC (CI11) with val id characters

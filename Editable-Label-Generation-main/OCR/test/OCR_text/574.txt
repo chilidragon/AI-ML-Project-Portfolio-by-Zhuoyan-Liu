@@ -1,0 +1,7 @@
+ATMR: .GRF,2,2
+
+This label should not print any graphic,» since the objectname
+
+was not specified» and the default name “UNKNOWN” is used.
+TEST IMPARDEF .14@ LABEL 1 OF 9
+

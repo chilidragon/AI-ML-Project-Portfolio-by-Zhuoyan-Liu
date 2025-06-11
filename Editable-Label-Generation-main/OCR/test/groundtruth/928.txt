@@ -1,0 +1,3 @@
+This format tests:
+
+Plessey(BP), no check digits, CI17 with valid characters

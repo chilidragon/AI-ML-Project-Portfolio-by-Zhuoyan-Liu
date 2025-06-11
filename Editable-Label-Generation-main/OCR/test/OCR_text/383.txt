@@ -1,0 +1,26 @@
+ABLZS456A
+
+A
+
+Azz
+I
+Al11A
+ML
+Aga
+NI
+
+A:
+
+$536A
+
+AgSA
+
+A-“. +A
+
+CODABAR NORMAL CHECK DIGIT TEST
+
+This label will print.....
+7? barcodes, testing check digits for this barcode.
+
+TEST KNBARCODE
+

@@ -1,0 +1,7 @@
+CODABAR NORMAL CHECK DIGIT TEST
+
+This label will print.....
+7 barcodes, testing check digits for this barcode.
+
+TEST KNBARCODE
+

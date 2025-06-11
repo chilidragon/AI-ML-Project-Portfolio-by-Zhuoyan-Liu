@@ -1,0 +1,4 @@
+This format tests:
+
+Codablock (BB), no security level, Node: A, C112 with val id characters
+

@@ -1,0 +1,4 @@
+This format tests:
+
+Code 11 (B1), INTL_HOLL (CI3) with val id characters,
+

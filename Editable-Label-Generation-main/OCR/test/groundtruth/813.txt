@@ -1,0 +1,5 @@
+This format tests:
+
+Standard 2 of 5(BJ), INTL_MISC (CI11) with valid characters
+
+

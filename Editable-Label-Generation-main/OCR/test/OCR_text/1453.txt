@@ -1,0 +1,4 @@
+This format teste:
+
+Codablock (EB), no security level, Node: @, C112 with val id characters
+

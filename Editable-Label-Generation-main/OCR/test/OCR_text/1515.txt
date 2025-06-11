@@ -1,0 +1,4 @@
+This format teste:
+
+Aztec (BO), Extended Interp: N, Enron Control: @, Henu: N, CI? with val id characters,
+

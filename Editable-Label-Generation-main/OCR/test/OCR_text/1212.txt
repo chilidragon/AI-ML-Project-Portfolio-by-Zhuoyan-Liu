@@ -1,0 +1,5 @@
+This format teste:
+
+EAN-IS<BED, C125 with valid characters
+
+@!" 123456" 7s9128

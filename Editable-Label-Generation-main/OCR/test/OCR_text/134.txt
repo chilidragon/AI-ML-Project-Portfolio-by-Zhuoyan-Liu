@@ -1,0 +1,24 @@
+INVALID - L
+
+INVALID - L
+
+INVALID - L
+
+INVALID - L
+
+INVALID - L
+
+INVALID - P
+
+INVALID - L
+
+INVALID - P
+
+INVALID - L
+
+INVALID - L
+
+This label will print the results of CV command
+
+with too many characters in the barcode.
+

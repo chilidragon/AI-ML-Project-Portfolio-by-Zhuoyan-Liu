@@ -1,0 +1,7 @@
+MST NORMAL HEIGHT TEST
+
+This label will print.....
+several barcodes with varying heights.
+
+TEST MNBARCODE
+

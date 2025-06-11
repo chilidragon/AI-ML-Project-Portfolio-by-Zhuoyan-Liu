@@ -1,0 +1,4 @@
+This format tests:
+
+ANSI Code 128 (BC) mode: N no check digit, CI27 with val id characters,
+

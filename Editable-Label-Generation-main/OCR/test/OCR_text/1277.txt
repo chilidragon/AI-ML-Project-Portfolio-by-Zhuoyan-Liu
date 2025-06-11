@@ -1,0 +1,5 @@
+This format teste:
+
+Code 93 (BA, no check digit, CI17 with valid characters
+
+O612340GN2 ! aABCO

@@ -1,0 +1,87 @@
+run_config:
+  name: random-forest-heart_attack_classification
+  author: Kira Luo
+  version: 1.0
+  description: Classifies patients into high risk (1) or low risk of a heart attack (0).
+  dependencies: requirements.txt
+  data_source: "s3://cloud-project-2/raw_data/Raw_Data_heart_attack_prediction_dataset.csv"
+
+environment:
+  matplotlib_backend: 'inline'
+  backend_figure_format: 'retina'
+  auto_reload: true
+
+plotting:
+  font_size: 16
+  tick_labelsize: 14
+  figure_size: [12.0, 8.0]
+  label_size: 20
+  label_color: '#677385'
+  title_size: 20
+  line_color: '#0055A7'
+  line_width: 3
+  text_color: '#677385'
+  font_family: 'sans-serif'
+  sans_serif_font: 'Tahoma'
+
+create_dataset:
+  remove_columns:
+    - Patient ID
+    - Country
+  encode_categorical:
+    Diet:
+      mapping: {Average: 0, Healthy: 1, Unhealthy: 2}
+    Hemisphere:
+      mapping: {Northern Hemisphere: 1, Southern Hemisphere: 0}
+  encode_and_split:
+    Blood Pressure:
+      original_column: Blood Pressure
+      new_columns: [Systolic_BP, Diastolic_BP]
+      separator: '/'
+  one_hot_encode:
+    - Continent
+
+generate_features:
+  features:
+    - Age
+    - Cholesterol
+    - Heart Rate
+    - Diabetes
+    - Family History
+    - Smoking
+    - Obesity
+    - Alcohol Consumption
+    - Exercise Hours Per Week
+    - Diet_encoded
+    - Systolic_BP
+    - Diastolic_BP
+  scaler: StandardScaler
+
+train_model:
+  method: random_forest
+  choose_features:
+    features_to_use: [Age, Cholesterol, Heart Rate, Diabetes, Family History, Smoking, Obesity, Alcohol Consumption, Exercise Hours Per Week, Diet_encoded, Systolic_BP, Diastolic_BP]
+  get_target:
+    target: Heart Attack Risk
+  split_data:
+    train_size: 0.8
+    test_size: 0.2
+  parameters:
+    n_estimators: 400
+    max_depth: 40
+    min_samples_leaf: 4
+    max_features: 5
+
+score_model:
+  method: random_forest
+  choose_features:
+    features_to_use: [Age, Cholesterol, Heart Rate, Diabetes, Family History, Smoking, Obesity, Alcohol Consumption, Exercise Hours Per Week, Diet_encoded, Systolic_BP, Diastolic_BP]
+
+### need to be revised accordingly
+aws:
+  upload: True
+  bucket_name: cloud-project-2
+  prefix: artifacts
+
+evaluate_performance:
+  metrics: [auc, accuracy, confusion, classification_report]

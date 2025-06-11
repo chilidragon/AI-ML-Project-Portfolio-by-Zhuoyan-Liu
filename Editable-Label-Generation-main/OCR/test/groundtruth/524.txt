@@ -1,0 +1,21 @@
+ABCDEFGHIJKLMNOP
+QRSTUVWXYZ 0123456789
+abcedefghijkimnop
+grstuvwxyz 0123456789
+'!@#$%&*()=
+
+,.?:";{}[]
+
+Greater Than >
+
+Less Than <
+
+OR Sign |
+
+Underscore _
+
+Minus Sign —
+
+Tilde Char ~
+
+Caret Char ^

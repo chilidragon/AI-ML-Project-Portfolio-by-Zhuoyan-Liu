@@ -1,0 +1,5 @@
+This format teste:
+
+UPC-ACEUD, no check digit, CI2S with valid characters
+
+[] 12345"67e91

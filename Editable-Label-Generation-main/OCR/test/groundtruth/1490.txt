@@ -1,0 +1,4 @@
+This format tests:
+
+Aztec (BO), Extended Intenp: N, Error Control: 0, Menu: N, CI4 with val id characters
+

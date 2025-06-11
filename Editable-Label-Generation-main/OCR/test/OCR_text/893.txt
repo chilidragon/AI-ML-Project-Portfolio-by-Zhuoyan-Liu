@@ -1,0 +1,7 @@
+This format teste:
+
+Postnet (22), C128 with val id characters
+
+An f I Mt
+12345
+

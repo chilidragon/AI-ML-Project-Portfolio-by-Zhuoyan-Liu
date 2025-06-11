@@ -1,0 +1,19 @@
+INVALID - S
+
+INVALID - S
+
+INVALID - L
+
+INVALID - L
+
+INVALID - E
+
+INVALID - L
+
+UPC/EAN EXT INVALID PARAMETERS TE
+
+This label will print.....
+7 barcodes, testing invalid parameters for this barcode.
+
+TEST INBARCODE
+

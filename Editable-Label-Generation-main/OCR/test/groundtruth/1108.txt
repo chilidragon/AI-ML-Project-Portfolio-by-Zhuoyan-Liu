@@ -1,0 +1,3 @@
+This format tests:
+
+Logmars (BL), CI13 with valid characters

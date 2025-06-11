@@ -1,0 +1,4 @@
+This format tests:
+
+RSS(BR), Synbology Type: 1, USA1 (CI1O) with val id characters
+

@@ -1,0 +1,5 @@
+This format teste:
+
+EAN-8¢HS), INTL_HOLL (CIS) with valid characters
+
+123" 4565

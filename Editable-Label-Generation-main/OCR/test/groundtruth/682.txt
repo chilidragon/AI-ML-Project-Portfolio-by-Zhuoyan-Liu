@@ -1,0 +1,3 @@
+This format teste:
+
+UPc-E(B9), C127 with val id characters

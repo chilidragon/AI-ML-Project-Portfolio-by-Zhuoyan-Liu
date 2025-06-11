@@ -1,0 +1,4 @@
+This format tests:
+
+Maxicode(BD), Node: 2, CI5 with valid characters
+

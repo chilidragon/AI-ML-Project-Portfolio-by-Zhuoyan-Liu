@@ -1,0 +1,5 @@
+This format teste:
+
+PlesseyCBP), no check digits, CI17 with valid characters
+
+Bl234567s912

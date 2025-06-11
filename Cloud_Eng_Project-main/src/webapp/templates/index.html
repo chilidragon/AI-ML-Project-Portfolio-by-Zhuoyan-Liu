@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Patient Risk Dashboard</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .card {
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+        .card-header {
+            border-radius: 10px 10px 0 0;
+        }
+        .header-icon {
+            font-size: 2em;
+            margin-right: 10px;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .header .title {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .stat-card {
+            background-color: #ffffff;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .stat-card .card-body {
+            padding: 1.5em;
+            text-align: center;
+        }
+        .stat-card .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .stat-card .stat-label {
+            font-size: 1em;
+            color: #888888;
+        }
+        .chart-container {
+            position: relative;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-4">
+        <div class="header">
+            <div class="title">Patient Risk Dashboard</div>
+            <form method="post" class="d-flex">
+                <input type="number" name="num_patients" class="form-control" placeholder="Number of Patients" min="1" max="100" value="10" style="margin-right: 10px;">
+                <button type="submit" class="btn btn-primary">Apply Filter</button>
+            </form>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card stat-card">
+                    <div class="card-body">
+                        <div class="stat-value">{{ total_visits }}</div>
+                        <div class="stat-label">Total Visits</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card stat-card">
+                    <div class="card-body">
+                        <div class="stat-value">{{ total_likes }}</div>
+                        <div class="stat-label">Total Positive Heart Attack</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card stat-card">
+                    <div class="card-body">
+                        <div class="stat-value">{{ total_comments }}</div>
+                        <div class="stat-label">Total Negative Heart Attack</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Top Patients at Risk</h3>
+                    </div>
+                    <div class="card-body">
+                        <div>{{ patients|safe }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Age Distribution of Patients</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <canvas id="ageDistributionChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Density Plot of Sedentary Hours Per Day</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <canvas id="sedentaryHoursChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Descriptive Statistics of Sex</h3>
+                    </div>
+                    <div class="card-body">
+                        <div>{{ shpd_stats|safe }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- Bootstrap JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const ageCtx = document.getElementById('ageDistributionChart').getContext('2d');
+                const sedentaryCtx = document.getElementById('sedentaryHoursChart').getContext('2d');
+    
+                const ageDistributionChart = new Chart(ageCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: {{ age_labels | safe }},
+                        datasets: [{
+                            label: 'Age Distribution',
+                            data: {{ age_data | safe }},
+                            backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            x: {
+                                beginAtZero: true
+                            },
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+    
+                const sedentaryHoursChart = new Chart(sedentaryCtx, {
+                    type: 'line',
+                    data: {
+                        labels: {{ sedentary_labels | safe }},
+                        datasets: [{
+                            label: 'Risk = 0',
+                            data: {{ sedentary_data_0 | safe }},
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 1,
+                            fill: true
+                        }, {
+                            label: 'Risk = 1',
+                            data: {{ sedentary_data_1 | safe }},
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            x: {
+                                beginAtZero: true
+                            },
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            });
+        </script>
+</body>
+</html>

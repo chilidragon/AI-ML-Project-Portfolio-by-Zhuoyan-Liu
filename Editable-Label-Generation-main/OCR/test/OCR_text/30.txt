@@ -1,0 +1,26 @@
+INVALID - L INVALID - L
+
+Troe
+
+Faro?
+
+INVALID - S INVALID - S
+
+INVALID - L INVALID - L
+
+INVALID - E INVALID - E
+
+91256
+
+91256
+
+I IM
+46
+
+UPC/“EAN EXT NORMAL INTERPRETATION
+
+This label will print.....
+14 barcodes tests the interpretation line for this barcode.
+
+TEST INBARCODE
+

@@ -1,0 +1,7 @@
+I20F5 NORMAL CHARACTER TEST
+
+This label will print.....
+7 barcodes tests all the character for this barcode.
+
+TEST 2NBARCODE
+

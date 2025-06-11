@@ -1,0 +1,3 @@
+This format tests:
+
+EAN-8(B8), INTL_HOLL (C13) with valid characters

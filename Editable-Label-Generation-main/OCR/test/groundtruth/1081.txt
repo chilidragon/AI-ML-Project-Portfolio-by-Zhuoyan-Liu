@@ -1,0 +1,4 @@
+This format tests:
+
+Maxicode(BD), Mode: 2, CI12 with valid characters
+

@@ -1,0 +1,7 @@
+^WDR:*. x
+
+Six more graphics were downloaded to DRAM,» so this instruction
+should print a directory listing with 16 objects total.
+
+TEST IDPARDEF .140 LABEL 15 OF 19
+
